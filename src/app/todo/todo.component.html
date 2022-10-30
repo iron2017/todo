@@ -1,0 +1,31 @@
+
+<div class="golbalwrapper" >
+    
+    <div class="wrapper">
+      
+      <div class="task-input">
+        
+        <input [(ngModel)]="addItemValue"  class="icon" type="text" placeholder="Add a New Task  ">
+        
+      </div>
+      <div class="controls">
+
+       
+        <button  class="add-btn" (click)="addItem()">Add Todo</button>
+        <div class="flexContainer"> <input [(ngModel)]="newItem" (keypress)="getAllItem()" class="icon-search inputField" type="text" placeholder="Search Item  ">
+        <button  class="add-btn " (click)="filterItem()">Search</button>
+      </div>
+      </div>
+      <ul class="task-box">
+        <ng-scrollbar style="height: 100px">
+         
+        
+        <li *ngFor = "let item of itemArr ; let ind = index">{{item?.item_name}}
+          <input type="checkbox"  style="margin-right:10px ;">
+        </li>
+       
+      </ng-scrollbar>
+      </ul>
+      
+    </div>
+  </div>
