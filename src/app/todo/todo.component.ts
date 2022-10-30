@@ -26,32 +26,31 @@ export class TodoComponent implements OnInit {
     
   }
   getAllItem() {
-    this.globalService.getAllItems().subscribe({next:
+    this.globalService.getAllItems().subscribe(
+      {next:
       res => {
-      this.itemArr =res;
-      
-  
-    },error: err => this.errorMessage = err.message })
+                   this.itemArr =res;
+                                       },
+    error: err => this.errorMessage = err.message }
+    )
   }
-
   addItem() {
     this.itemObj.item_name = this.addItemValue;
     this.globalService.addItem(this.itemObj).subscribe({next:
       res => {
-      console.log(res)
-      this.ngOnInit();
-      this.addItemValue = '';
-    },
-    error: err => this.errorMessage = err.message
-   } )
+                console.log(res)
+                this.ngOnInit();
+                this.addItemValue = '';
+                                         },
+    error: err => this.errorMessage = err.message}
+                                                       )
   }
  filterItem(){
   this.globalService.filterItem(this.newItem).subscribe({next:
     res => {
-    this.itemArr =res;
-    
-
-  },error: err => this.errorMessage = err.message } );
+             this.itemArr =res;
+                                 },
+  error: err => this.errorMessage = err.message } );
   
  }
 

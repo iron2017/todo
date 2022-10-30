@@ -2,27 +2,19 @@
 <div class="golbalwrapper" >
     <button class="fake-btn" (click)="goToBack()" >Fack Backend </button>
     <div class="wrapper">
-      
       <div class="task-input">
-        
         <input [(ngModel)] ="newItem"  class="icon" type="text" placeholder="Add a New Task  ">
-        
-      </div>
-      <div class="controls">
+          </div>
+        <div class="controls">
         <button class="add-btn" (click)="addItem()">Add Todo</button>
         <input [(ngModel)] ="searchText" class="icon-search" type="text" placeholder="Search Item  ">
-        
-      </div>
-      <ul class="task-box">
-        <ng-scrollbar style="height: 100px">
-         
-        
-        <li *ngFor = "let item of todoItemArray |search:searchText ; let ind = index">{{item}}
+         </div>
+        <ul class="task-box">
+         <ng-scrollbar style="height: 100px">
+           <li *ngFor = "let item of todoItemArray |search:searchText ; let ind = index">{{item}}
           <input type="checkbox"  style="margin-right:10px ;">
         </li>
-       
       </ng-scrollbar>
       </ul>
-      
     </div>
   </div>

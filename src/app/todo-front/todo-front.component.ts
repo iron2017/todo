@@ -18,15 +18,13 @@ constructor(private router: Router){}
     this.todoItemArray = JSON.parse(localdata)
   }
   }
-
+  
   addItem(){
   if (this.newItem.length > 0){
     this.todoItemArray.push(this.newItem);
-  }
-
+                                           }
   localStorage.setItem('todoItems',JSON.stringify(this.todoItemArray))
-
-  }
+    }  
   goToBack(){
     this.router.navigate(['/todo-list'])
   }
